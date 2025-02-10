@@ -14,6 +14,14 @@ public class RequestAuthorizationManager implements AuthorizationManager<HttpSer
     private static final String ALL_ALLOW_URI = "/search";
     private List<String> allowUri = List.of(LOGIN_REQUEST_URI, PRIVATE_REQUEST_URI, ADMIN_REQUEST_URI, ALL_ALLOW_URI);
 
+    public RequestAuthorizationManager() {
+        //TODO
+    }
+
+    public RequestAuthorizationManager(List<RequestMatcherEntry<AuthorizationManager<?>>> allowUri) {
+        //TODO
+    }
+
     @Override
     public AuthorizationDecision check(Authentication authentication, HttpServletRequest request) {
         final String requestURI = request.getRequestURI();
